@@ -57,6 +57,7 @@ group :production do
   gem 'pg'
 end
 
+gem 'sassc'
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
