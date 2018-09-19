@@ -1,12 +1,12 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /products
   # GET /products.json
 
   def index
-    @products = Product.all.paginate(page: params[:page], per_page: 5)
+    @products = Product.all
 
   end
 
