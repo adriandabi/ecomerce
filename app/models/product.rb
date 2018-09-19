@@ -5,4 +5,8 @@ class Product < ApplicationRecord
 >>>>>>> development
   has_many :orders
   has_many :comments
+<<<<<<< HEAD
+=======
+
+>>>>>>> development
 end
