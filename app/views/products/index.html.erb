@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Products</h1>
-
+<%= render 'form', product: @product %>
+<!--
 <table>
   <thead>
     <tr>
@@ -32,7 +33,6 @@
 
 <br>
 
-<!-- GRID/ dynamic display-->
 <div class="container-fluid">
   <div class="row">
     <% @products.each do |product| %>
@@ -47,10 +47,15 @@
         <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 
-      </div><!-- /col -->
+      </div>
     <% end %>
   </div>
 </div>
+<<<<<<< HEAD
+</div> -->
+
+=======
 </div>
 <%= @test_variable %>
+>>>>>>> development
 <%= link_to 'New Product', new_product_path %>
