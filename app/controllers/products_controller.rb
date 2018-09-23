@@ -5,7 +5,6 @@ class ProductsController < ApplicationController
   # GET /products.json
 
   def index
-<<<<<<< HEAD
     if params[:q]
       search_term = params[:q]
       @products = Product.search(search_term)
@@ -13,10 +12,6 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
     end
-=======
-    @products = Product.all
-    
->>>>>>> master
   end
 
   # GET /products/1
