@@ -1,10 +1,14 @@
-<div class="col-sm">
-      <h1><%= link_to product.name, product %></h1>
-      <p><%= product.description %></p>
-      <strong>$ <%= product.price %></strong>
-  </div><!-- /col -->
+<div class="row">
+   <% @products.each do |product| %>
+     <div class="col-sm">
+       <h1><%= link_to product.name, product %></h1>
+       <p><%= product.description %></p>
 
-  <%= form_for(@product) do |f| %>
+     </div><!-- /col -->
+   <% end %>
+ </div>
+
+  <%= form_with(@product) do |form| %>
     <% if @product.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>

@@ -25,6 +25,12 @@
       </ul>
     </nav>
 
+    <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+      <%= form.label :q, 'Search for:' %>
+      <%= form.text_field :q, id: 'q', value: params[:q] %>
+      <%= form.submit 'Search' %>
+    <% end %>
+    
     <%= image_tag("DSC_0759.jpg" , class: "img-responsive") %>
     <%= yield %>
 
