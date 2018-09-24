@@ -23,6 +23,20 @@
         <li><%= link_to "Contact", simple_pages_contact_path %></li>
         <li><%= link_to "products", products_path %></li>
       </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to('Login', new_user_session_path, class: "nav-link") %>
+        </li>
+        <% end %>
+        </li>
+      </ul>
+      
     </nav>
 
     <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
@@ -30,10 +44,11 @@
       <%= form.text_field :q, id: 'q', value: params[:q] %>
       <%= form.submit 'Search' %>
     <% end %>
-    
+
     <%= image_tag("DSC_0759.jpg" , class: "img-responsive") %>
     <%= yield %>
-
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <footer>
       &copy; 2018 Bike Berlin
     </footer>
