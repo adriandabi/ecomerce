@@ -36,7 +36,7 @@
         <% end %>
         </li>
       </ul>
-      
+
     </nav>
 
     <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
@@ -52,5 +52,9 @@
     <footer>
       &copy; 2018 Bike Berlin
     </footer>
+    <% if notice %>
+    <p id="notice" class="alert alert-primary"><%= notice %></p>
+<% end %>
+    <%= alert %>
   </body>
 </html>
